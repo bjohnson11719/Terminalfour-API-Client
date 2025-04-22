@@ -3,10 +3,11 @@ import requests
 import json
 
 #section_id_list and channel_id are required
-#branch is optional (default is False) but can be changed to branch=True
 #section_id_list should be a list of the section ids to publish
 #channel_id should be a single integer value (eg. 1)
-def section_publish(url, token, cookie, section_id_list, channel_id, branch=False):
+#branch is optional (default is False) but can be changed to branch=True
+#language is also optional (default is English)
+def section_publish(url, token, cookie, section_id_list, channel_id, branch=False, language="en"):
 
   url +=  "rs/task/repository"
 
@@ -18,7 +19,7 @@ def section_publish(url, token, cookie, section_id_list, channel_id, branch=Fals
     "publishCompleteChannel":False,
     "publishOptions":{"publishArchiveSections":True},
     "taskLevel":"section",
-    "selectedLanguage":"en"
+    "selectedLanguage":language
   })
 
   headers = {
