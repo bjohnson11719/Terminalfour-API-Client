@@ -15,7 +15,7 @@ def section_publish(url, token, cookie, section_id_list, channel_id, branch=Fals
     "taskType":"channelPublish",
     "channel":channel_id,
     "sections":section_id_list,
-    "branch":False,
+    "branch":branch,
     "publishCompleteChannel":False,
     "publishOptions":{"publishArchiveSections":True},
     "taskLevel":"section",
